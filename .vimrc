@@ -23,6 +23,10 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'burnettk/vim-angular'
 Bundle 'tpope/vim-cucumber'
 Bundle 'scrooloose/syntastic'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'shumphrey/fugitive-gitlab.vim'
+Bundle 'marcweber/vim-addon-mw-utils'
+Bundle 'garbas/vim-snipmate'
 
 filetype plugin indent on
 syntax enable
@@ -38,6 +42,7 @@ au InsertEnter * hi Cursor guibg=green
 set colorcolumn=80
 
 set ruler
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 " Tabs
@@ -49,3 +54,5 @@ set expandtab
 set autoindent
 set copyindent
 
+" Use ack instead of grep
+set grepprg=ack
