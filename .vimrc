@@ -27,7 +27,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'shumphrey/fugitive-gitlab.vim'
 Bundle 'marcweber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
-
+Bundle 'bling/vim-airline'
+Bundle 'pbrisbin/vim-mkdir'
 filetype plugin indent on
 syntax enable
 set term=builtin_ansi
@@ -53,6 +54,47 @@ set expandtab
 
 set autoindent
 set copyindent
+set antialias
+
+set showmatch
+set hlsearch
+set noerrorbells
 
 " Use ack instead of grep
 set grepprg=ack
+
+" Always show statusline
+set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+
+let g:airline_powerline_fonts = 1
+
+" Enable folding based on syntax rules
+set foldmethod=syntax
+set foldlevelstart=1
+set nofoldenable
+
+"" Adjust the highlighting
+highlight Folded guibg=grey guifg=blue
+
+"" Map folding to Spacebar
+nnoremap  za
+
+let javaScript_fold=1         " JavaScript
+let perl_fold=1               " Perl
+let php_folding=1             " PHP
+let r_syntax_folding=1        " R
+let ruby_fold=1               " Ruby
+let sh_fold_enabled=1         " sh
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
+
+" map
+" nmap , \
+map <F2> :NERDTreeToggle<CR>
+map <leader>p :CtrlP
+set lines=999 
+
+" file functions
+
