@@ -94,7 +94,20 @@ let xml_syntax_folding=1      " XML
 " nmap , \
 map <F2> :NERDTreeToggle<CR>
 map <leader>p :CtrlP
+
+" use alt + arrow up to switch to  top split
+map <silent> <A-Up> :wincmd k<CR>
+" use alt + arrow down to switch to bottom split
+map <silent> <A-Down> :wincmd j<CR>
+" use alt + arrow left to switch to left split
+map <silent> <A-Left> :wincmd h<CR>
+" use alt + arrow right to switch to right split
+map <silent> <A-Right> :wincmd l<CR>
+
 set lines=999 
+
+set splitbelow
+set splitright
 
 " file functions
 
