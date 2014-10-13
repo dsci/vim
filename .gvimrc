@@ -23,4 +23,14 @@ if has("gui_macvim")
   noremap <D-9> :tabn 9<CR>
   " Command-0 goes to the last tab
   noremap <D-0> :tablast<CR>
+  
+  " use alt + arrow up to switch to  top split
+  nmap <silent> <A-Up> :wincmd k<CR>
+  " use alt + arrow down to switch to bottom split
+  nmap <silent> <A-Down> :wincmd j<CR>
+  " use alt + arrow left to switch to left split
+  nmap <silent> <A-Left> :wincmd h<CR>
+  " use alt + arrow right to switch to right split
+  nmap <silent> <A-Right> :wincmd l<CR>
+  
 endif
