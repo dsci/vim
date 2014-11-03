@@ -7,7 +7,7 @@ call vundle#rc()
 " Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
@@ -26,9 +26,17 @@ Bundle 'scrooloose/syntastic'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'shumphrey/fugitive-gitlab.vim'
 Bundle 'marcweber/vim-addon-mw-utils'
+Bundle 'vim-scripts/tlib'
 Bundle 'garbas/vim-snipmate'
 Bundle 'bling/vim-airline'
 Bundle 'pbrisbin/vim-mkdir'
+Bundle 'jeroenbourgois/vim-actionscript'
+Bundle 'nice/sweater'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'DAddYE/soda.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle "pangloss/vim-javascript"
+
 filetype plugin indent on
 syntax enable
 set term=builtin_ansi
@@ -95,19 +103,31 @@ let xml_syntax_folding=1      " XML
 map <F2> :NERDTreeToggle<CR>
 map <leader>p :CtrlP
 
-" use alt + arrow up to switch to  top split
-map <silent> <A-Up> :wincmd k<CR>
-" use alt + arrow down to switch to bottom split
-map <silent> <A-Down> :wincmd j<CR>
-" use alt + arrow left to switch to left split
-map <silent> <A-Left> :wincmd h<CR>
-" use alt + arrow right to switch to right split
-map <silent> <A-Right> :wincmd l<CR>
-
 set lines=999 
 
 set splitbelow
 set splitright
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_force_overwrite_completefunc = 1
+
+" Store temporary files in standard location.
+let g:neocomplcache_temporary_dir='~/.vim/neocomplcache'
+
+" Define keyword.
+let g:neocomplcache_keyword_patterns = {}
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Enable heavy omni completion.
+let g:neocomplcache_omni_patterns = {}
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+" Completes from all buffers.
+if !exists('g:neocomplcache_same_filetype_lists')
+  let g:neocomplcache_same_filetype_lists = {}
+endif
+let g:neocomplcache_same_filetype_lists.gitconfig = '_'
+let g:neocomplcache_same_filetype_lists._ = '_'
 
 " file functions
 
