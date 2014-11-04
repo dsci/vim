@@ -36,6 +36,9 @@ Bundle 'Shougo/neocomplcache.vim'
 Bundle 'DAddYE/soda.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle "pangloss/vim-javascript"
+Bundle 'whatyouhide/vim-gotham'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'tpope/vim-endwise'
 
 filetype plugin indent on
 syntax enable
@@ -129,5 +132,15 @@ endif
 let g:neocomplcache_same_filetype_lists.gitconfig = '_'
 let g:neocomplcache_same_filetype_lists._ = '_'
 
-" file functions
+" vim rspec
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
+let g:rspec_runner = "os_x_iterm"
+
+" local config files
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
