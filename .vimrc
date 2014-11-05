@@ -39,6 +39,9 @@ Bundle "pangloss/vim-javascript"
 Bundle 'whatyouhide/vim-gotham'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-endwise'
+Bundle 'junegunn/vim-pseudocl'
+Bundle 'junegunn/vim-oblique'
+Bundle 'octref/RootIgnore'
 
 filetype plugin indent on
 syntax enable
@@ -139,6 +142,11 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_runner = "os_x_iterm"
+
+" RootIgnore
+" As long as it doesn't contain 'r' it's fine
+let g:ctrlp_working_path_mode = '0'
+
 
 " local config files
 if filereadable(glob("~/.vimrc.local"))
