@@ -43,11 +43,14 @@ Bundle 'junegunn/vim-pseudocl'
 Bundle 'junegunn/vim-oblique'
 Bundle 'octref/RootIgnore'
 Bundle 'blerins/flattown'
-
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 syntax enable
-set term=builtin_ansi
+if !has("gui_running")
+  set term=builtin_ansi
+endif
+
 set nu
 set cursorline
 
@@ -115,6 +118,7 @@ let xml_syntax_folding=1      " XML
 
 " map
 " nmap , \
+let mapleader = ","
 map <F2> :NERDTreeToggle<CR>
 map <leader>p :CtrlP
 
