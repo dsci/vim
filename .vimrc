@@ -42,6 +42,8 @@ Bundle 'tpope/vim-endwise'
 Bundle 'junegunn/vim-pseudocl'
 Bundle 'junegunn/vim-oblique'
 Bundle 'octref/RootIgnore'
+Bundle 'blerins/flattown'
+
 
 filetype plugin indent on
 syntax enable
@@ -83,6 +85,13 @@ set laststatus=2
 set t_Co=256
 
 let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.space = "\u3000"
+
 
 " Enable folding based on syntax rules
 set foldmethod=syntax
@@ -147,6 +156,16 @@ let g:rspec_runner = "os_x_iterm"
 " As long as it doesn't contain 'r' it's fine
 let g:ctrlp_working_path_mode = '0'
 
+
+colorscheme flattown
+
+" map tab movement
+nnoremap <C-e> :tabprevious<CR>
+nnoremap <C-w>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-e> <Esc>:tabprevious<CR>i
+inoremap <C-w>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
 
 " local config files
 if filereadable(glob("~/.vimrc.local"))
