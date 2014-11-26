@@ -171,6 +171,8 @@ inoremap <C-e> <Esc>:tabprevious<CR>i
 inoremap <C-w>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
+nmap <F8> :TagbarToggle<CR>
+ 
 " local config files
 if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
