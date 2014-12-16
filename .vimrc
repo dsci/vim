@@ -44,6 +44,8 @@ Bundle 'junegunn/vim-oblique'
 Bundle 'octref/RootIgnore'
 Bundle 'blerins/flattown'
 Bundle 'majutsushi/tagbar'
+Bundle 'ajh17/Spacegray.vim'
+Bundle 'fholgado/minibufexpl.vim'
 
 filetype plugin indent on
 syntax enable
@@ -172,6 +174,10 @@ inoremap <C-w>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 nmap <F8> :TagbarToggle<CR>
+
+" buffer movement
+map <C-S-P> :bp<cr>
+map <C-S-W> :bn<cr>
  
 " local config files
 if filereadable(glob("~/.vimrc.local"))
