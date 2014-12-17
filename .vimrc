@@ -44,6 +44,7 @@ Bundle 'junegunn/vim-oblique'
 Bundle 'octref/RootIgnore'
 Bundle 'blerins/flattown'
 Bundle 'majutsushi/tagbar'
+Bundle 'mileszs/ack.vim'
 Bundle 'ajh17/Spacegray.vim'
 Bundle 'fholgado/minibufexpl.vim'
 
